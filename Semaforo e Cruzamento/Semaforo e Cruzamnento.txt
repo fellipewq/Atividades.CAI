@@ -1,0 +1,89 @@
+/*Autor: Fellipe
+Nome do Projeto: Aula 29- Cruzamento
+Data: 20/02/2025
+*/
+#define pinLedVermelhoA 13
+#define pinLedVerdeA 11
+#define pinLedAmareloA 12
+
+#define pinLedVerdeB 2
+#define pinLedAmareloB 3
+#define pinLedVermelhoB 4
+
+#define tempoLigado5seg 5000
+#define tempoLigado3seg 3000
+#define tempoLigado2seg 2000
+
+void setup()// Inicia o arduino
+{
+  pinMode(pinLedVermelhoA, OUTPUT);// Define o pino do Led como saida
+  pinMode(pinLedVerdeA, OUTPUT);// Define o pino do Led como saida
+  pinMode(pinLedAmareloA, OUTPUT);// Define o pino do Led como saida
+  pinMode(pinLedVerdeB, OUTPUT);// Define o pino do Led como saida
+  pinMode(pinLedAmareloB, OUTPUT);// Define o pino do Led como saida
+  pinMode(pinLedVermelhoB, OUTPUT);// Define o pino do Led como saida
+}
+
+void loop() // Roda o codigo abaixo em um cilco repedidamente
+{
+  
+ digitalWrite(pinLedVermelhoA, HIGH); // Liga o Led
+ 
+ digitalWrite(pinLedVerdeB, HIGH);// Liga o Led
+ delay(tempoLigado3seg); // Espera o tempo pedido com o Led aceso 
+ digitalWrite(pinLedVerdeB, LOW); // Desliga o Led
+  
+ digitalWrite(pinLedAmareloB, HIGH);// Liga o Led
+ delay(tempoLigado2seg); // Espera o tempo pedido com o Led aceso 
+ digitalWrite(pinLedAmareloB,LOW); // Desliga o Led
+  
+ digitalWrite(pinLedVermelhoA, LOW); // Desliga o Led
+  
+ digitalWrite(pinLedVermelhoB, HIGH);// Liga o Led
+  
+ digitalWrite(pinLedVerdeA, HIGH);// Liga o Led
+ delay(tempoLigado3seg); // Espera o tempo pedido com o Led aceso 
+ digitalWrite(pinLedVerdeA, LOW); // Desliga o Led
+  
+ digitalWrite(pinLedAmareloA, HIGH);// Liga o Led
+ delay(tempoLigado2seg); // Espera o tempo pedido com o Led aceso 
+ digitalWrite(pinLedAmareloA, LOW); // Desliga o Led
+ 
+ digitalWrite(pinLedVermelhoB, LOW); // Desliga o Led
+}
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+/*Autor: Fellipe
+Nome do projeto: Aula 28- semáforo
+Data:19/02/2025
+*/
+#define pinLedVerde 11
+#define pinLedAmarelo 12
+#define pinLedVermelho 13
+#define tempoLigado3seg 3000
+#define tempoLigado2seg 2000
+#define tempoLigado5seg 5000
+void setup() // Inicia o arduino
+{
+  pinMode (pinLedVerde, OUTPUT); // Define o pino do Led como saida
+  pinMode (pinLedAmarelo, OUTPUT); // Define o pino do Led como saida
+  pinMode (pinLedVermelho, OUTPUT); // Define o pino do Led como saida
+}
+
+void loop() // Roda o codigo abaixo em um cilco repedidamente
+{
+digitalWrite(pinLedVerde, HIGH); // Liga o Led Verde
+delay(tempoLigado3seg); // Espera o tempo pedido com o Led aceso 
+digitalWrite(pinLedVerde, LOW); // Desliga o Led Verde
+digitalWrite(pinLedAmarelo, HIGH); // Liga o Led Amarelo
+delay(tempoLigado2seg); // Espera o tempo pedido com o Led aceso
+digitalWrite(pinLedAmarelo, LOW); // Desliga o Led Amarelo
+digitalWrite(pinLedVermelho, HIGH); // Liga o Led Vermelho
+delay(tempoLigado5seg); // Espera o tempo pedido com Led aceso
+digitalWrite(pinLedVermelho, LOW); // Desliga o Led Vermelho 
+}
