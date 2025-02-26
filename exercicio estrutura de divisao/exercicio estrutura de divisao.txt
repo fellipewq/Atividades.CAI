@@ -1,0 +1,35 @@
+/*
+Autor: Fellipe
+Nome do Projeto:exercicio estrutura de decisao
+Data: 26/02/2025
+*/
+
+void setup()
+{
+  Serial.begin(9600);
+  
+  float altura1 = 1.58;
+  float peso2 = 46;
+  float resultadoReal = 0;
+    
+  resultadoReal =peso2 /sq(altura1);
+  Serial.println(resultadoReal);
+ 
+   float meupeso = 18.43;
+  
+  if (resultadoReal < 18.5){
+  Serial.println("Abaixo do peso");
+  }else if(resultadoReal >= 18.5  && resultadoReal <= 24.9){
+  Serial.println("Peso normal");
+  }else if(resultadoReal>= 25 && resultadoReal <= 34.9){
+  Serial.println("Obesidade em classe 1");
+  }else if (resultadoReal >=35 && resultadoReal <=39.9){
+  Serial.println("Obesidade em classe 2");
+  }else{
+  Serial.println("Obesidade em classe 3");
+}
+}
+
+void loop()
+{
+}
