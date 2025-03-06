@@ -1,0 +1,61 @@
+/*
+Autor: fellipe 
+Nome do Projeto:Questao twitch
+Data:06/03/2025
+*/
+
+#define pinLedVermelho 13
+#define pinLedLaranja 12
+#define pinLedAmarelo 11
+#define pinLedVerde 10
+#define pinLedAzul 9
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinLedVermelho, OUTPUT);
+  pinMode(pinLedLaranja, OUTPUT);
+  pinMode(pinLedAmarelo, OUTPUT);
+  pinMode(pinLedVerde, OUTPUT);
+  pinMode(pinLedAzul, OUTPUT);
+ int escolha = 5;
+  
+ switch(escolha)
+ {
+ case 0:
+ digitalWrite(pinLedVermelho, HIGH);
+ Serial.println("A qualidade do ar esta pessima");
+ break;
+ case 1:
+ digitalWrite(pinLedLaranja, HIGH);
+ Serial.println("A qualidade do ar esta ruim");
+ break;
+ case 2:
+ digitalWrite(pinLedAmarelo, HIGH);
+ Serial.println("A qualidade do ar esta normal");
+ break;
+ case 3:
+ digitalWrite(pinLedVerde, HIGH);
+ Serial.println("A qualidade do ar esta boa");
+ break;
+ case 4:
+ digitalWrite(pinLedAzul, HIGH);
+ Serial.println("A qualidade do ar esta excelente");
+ break;
+   
+ default:
+ digitalWrite(pinLedVermelho, LOW);
+ digitalWrite(pinLedLaranja, LOW);
+ digitalWrite(pinLedAmarelo, LOW);
+ digitalWrite(pinLedVerde, LOW);
+ digitalWrite(pinLedAzul, LOW);
+ Serial.println("Erro");
+ break;
+ }
+  
+}
+
+void loop()
+{
+  
+}
