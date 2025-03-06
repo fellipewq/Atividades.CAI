@@ -1,0 +1,28 @@
+/*
+Autor: Fellipe
+Nome do Projeto: Aula 29- Exercicios
+Data: 27/02/2025
+*//*
+Autor: Fellipe
+Nome do Projeto: Aula 29- Exercicios
+Data: 27/02/2025
+*/
+Serial.begin(9600);
+  int resultado = 0;
+  int nota1 = 9;
+  int nota2 = 7;
+  int nota3 = 5;
+  int nota4 = 10;
+     
+  resultado = (nota1 + nota2+ nota3 + nota4) /4;
+  
+  if (resultado >= 7)
+  {
+  Serial.println("APROVADO");
+  }
+  else if (resultado >=5 && resultado <= 7){
+  }
+  else
+  {
+  Serial.println("REPROVADO");
+  }

@@ -1,0 +1,25 @@
+/*
+Autor: Fellipe
+Nome do Projeto: Aula 29- Exercicios
+Data: 27/02/2025
+*/
+void setup()
+{
+  Serial.begin(9600);
+  int valorA = 1;
+  int valorB = 10;
+
+ if(valorA > valorB){
+Serial.println("o valor maior eh");
+Serial.println(valorA);
+ }else{
+      Serial.println("o valor maior eh");
+  Serial.println(valorB);
+ }
+  
+}
+
+void loop()
+{
+  
+}

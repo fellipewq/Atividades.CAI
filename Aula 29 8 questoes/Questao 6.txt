@@ -1,0 +1,31 @@
+/*
+Autor: Fellipe
+Nome do Projeto: Aula 29- Exercicios
+Data: 27/02/2025
+*/
+void setup()
+{
+  Serial.begin(9600);
+  int salario = 499;
+  int resultado = 0;
+  float acrescimo = 1.3;
+  if (salario >= 500){
+  Serial.println("Nao tem acesso ao reajuste do salario");
+  resultado = salario;
+    Serial.println(resultado);
+ 
+  }
+  
+  if (salario <500){
+  resultado = salario * acrescimo;
+  Serial.println("O seu salario foi reajustado para ");
+  Serial.println(resultado);
+  }
+  
+  
+}
+
+void loop()
+{
+ 
+}

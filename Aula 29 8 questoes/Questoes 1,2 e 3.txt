@@ -1,0 +1,59 @@
+/*
+Autor: Fellipe
+Nome do Projeto: Aula 29- Exercicios
+Data: 27/02/2025
+*/
+//at:1
+#define pinLedAzul 13
+//at:2
+#define pinLedVermelho 12
+//at:3
+#define pinLedVerde 11
+float resultadoReal =0;
+void setup()
+{
+  //Começo da questão 1 
+  pinMode(pinLedAzul, OUTPUT);
+  Serial.begin(9600);
+  
+  int temperatura=31;
+  if (temperatura >30){
+  digitalWrite(pinLedAzul, HIGH);
+}
+  //Final da questão 1
+   
+  //Começo da questão 2
+  pinMode(pinLedVermelho, HIGH);
+  Serial.begin(9600);
+  
+  int bateria=19;
+  if(bateria <20){
+  digitalWrite(pinLedVermelho, HIGH);
+  }
+  // Final da questão 2
+  
+  //Começo da questão 3
+  pinMode(pinLedVerde, OUTPUT);
+  Serial.begin(9600);
+  
+  int numero =4;
+  int resultadoReal=numero % 2;
+  if (resultadoReal==0){
+  digitalWrite(pinLedVerde, HIGH);
+  }
+  //Final da questão 3
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+}
+
+void loop()
+{
+   
+}

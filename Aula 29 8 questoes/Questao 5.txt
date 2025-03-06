@@ -1,0 +1,26 @@
+/*
+Autor: Fellipe
+Nome do Projeto: Aula 29- Exercicios
+Data: 27/02/2025
+*/
+
+
+void setup()
+{
+  Serial.begin(9600);
+  Serial.println("Matheus");
+  Serial.println("Entregador de Planfetero");
+  Serial.println("Salário R$800");
+  int valor = 800;
+  float acrescimo = 1.1;
+  int resultado = 0;
+  
+  resultado= valor * acrescimo;
+  Serial.print("O valor do salario do Matheus com o acrescimo sera de: ");
+  Serial.println(resultado);
+}
+
+void loop()
+{
+  
+}
