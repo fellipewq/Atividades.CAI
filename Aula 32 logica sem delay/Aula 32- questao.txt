@@ -1,0 +1,37 @@
+/*
+Autor: Fellipe
+Nome do Projeto: led sem delay
+Data: 07/03/2025
+*/
+#define pinLedVermelho 13
+
+unsigned long tempoInicial =0;
+bool estadoLed =0;
+
+void setup()
+{
+  pinMode(pinLedVermelho, OUTPUT);
+}
+
+void loop()
+{
+  unsigned long tempoAtual = millis();
+  if (tempoAtual-tempoInicial>=1000) //pasou o tempo
+  { //sim
+    if(estadoLed)
+    {
+      digitalWrite(pinLedVermelho, HIGH);
+      estadoLed =0;
+    //ligar o led
+    }  
+    else
+    {
+      digitalWrite(pinLedVermelho, LOW);
+      estadoLed =1;
+   //desligar o led
+    
+    }
+    tempoInicial = tempoAtual; //reinicia a contagem do tempo
+
+  }
+}
