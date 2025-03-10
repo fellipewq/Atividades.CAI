@@ -1,0 +1,57 @@
+/*
+Autor: Fellipe
+Nome do projeto: Aula 32- semaforo sem delay
+Data:10/03/2025
+*/
+#define pinLedVermelho 13
+#define pinLedAmarelo 12
+#define pinLedVerde 11
+
+#define tempoVermelho 5000
+#define tempoAmarelo 2000
+#define tempoVerde 3000
+unsigned long tempoInicial =0;
+  int faseSemaforo = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinLedVermelho, OUTPUT);
+  pinMode(pinLedAmarelo, OUTPUT);
+  pinMode(pinLedVerde, OUTPUT);
+}
+
+void loop()
+{
+  
+   unsigned long tempoAtual = millis();
+   if (tempoAtual - tempoInicial >= 1000)
+   {
+   faseSemaforo++;
+   tempoInicial = tempoAtual;
+   if(faseSemaforo == 10) faseSemaforo = 0;
+   Serial.println(faseSemaforo);
+  }
+
+  switch (faseSemaforo)
+   {
+    case 0:
+    digitalWrite(pinLedVermelho, HIGH);
+    digitalWrite(pinLedVerde, LOW);
+    digitalWrite(pinLedAmarelo, LOW);
+    break;
+     
+    case 5:
+    digitalWrite(pinLedVermelho, LOW);
+    digitalWrite(pinLedVerde, HIGH);
+    digitalWrite(pinLedAmarelo, LOW);
+    break;
+    case 8:
+    digitalWrite(pinLedVermelho, LOW);
+    digitalWrite(pinLedVerde, LOW);
+    digitalWrite(pinLedAmarelo, HIGH);
+    break;
+ 
+    
+  }
+}
