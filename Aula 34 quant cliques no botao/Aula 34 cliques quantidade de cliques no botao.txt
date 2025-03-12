@@ -1,0 +1,30 @@
+/*
+Autor: Fellipe
+Nome do projeto: Aula 34- contagem dos cliques
+Data:11/03/2025
+*/
+  
+#define pinBotao 10
+int estadoBotao =0;
+int estadoAnterior = 0;
+unsigned long intervalo =0;
+void setup()
+{
+ Serial.begin(9600);
+ pinMode(pinBotao, INPUT);
+ 
+}
+
+void loop()
+{
+  //le o estado atual
+  int estadoAtual = digitalRead(pinBotao);
+  
+  if (estadoAtual == 1 && estadoAnterior ==0)
+  {
+  estadoBotao++;
+  Serial.println(estadoBotao);
+  }
+  //guarda o estado atual em uma variavel
+  estadoAnterior = estadoAtual;
+}
