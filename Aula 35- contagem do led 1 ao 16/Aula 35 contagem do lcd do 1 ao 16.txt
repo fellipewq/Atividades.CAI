@@ -1,0 +1,99 @@
+/*
+Autor: Fellipe
+Nome do projeto: Aula 35- contagem do lcd 1 ao 16
+Data:12/03/2025
+*/
+
+#include <LiquidCrystal_I2C.h>
+#define pinBotao 2
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+int estadoAnterior =0;
+int estadoBotao =0;
+
+void setup()
+{
+ pinMode(pinBotao, INPUT);
+ lcd.init();//para innicial o lcd
+ lcd.backlight();
+}
+
+void loop()
+{
+ 
+  bool leituraBotao = digitalRead(pinBotao);
+  static bool leituraAnteriorBotao = 0;
+  static int contagem = 0;
+  static bool SomaSubtracao =0;
+  
+  
+  if(leituraBotao ==1 && leituraAnteriorBotao == 0)
+  {
+    //SOMA
+    if(SomaSubtracao == 0)
+    {
+    contagem++;
+    if(contagem == 5) SomaSubtracao = 1;
+    }
+    //SUBTRAIR
+    else
+    {
+    contagem--; 
+    if (contagem ==1) SomaSubtracao =0;
+    
+    }
+    {
+    lcd.print(contagem);
+    }
+    leituraAnteriorBotao = leituraBotao;
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ /* bool leituraBotao = digitalRead(pinBotao);
+  static bool leituraAnteriorBotao = 0;
+  static int contagem = 0;
+  
+  if(leituraBotao ==1 && leituraAnteriorBotao == 0)
+  {
+   contagem++;
+   if(contagem == 10) contagem = 0;
+   lcd.print(contagem);
+  }
+  leituraAnteriorBotao = leituraBotao;*/
+  
+  
+  
+  
+  
+  
+/* int estadoAtual = digitalRead(pinBotao);
+ if (estadoAtual ==1 && estadoAnterior ==0)
+ {
+ estadoBotao++;
+ lcd.print(abs (estadoBotao));
+ if(estadoBotao ==5)
+ {
+  estadoBotao =-5;
+ }
+}
+ estadoAnterior = estadoAtual;*/
+}
