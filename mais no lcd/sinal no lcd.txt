@@ -1,0 +1,23 @@
+ Serial.begin(9600);
+ lcd.init();
+ lcd.backlight();
+ lcd.print(">");
+}
+void loop()
+{
+int botao = analogRead (A0);
+
+if(botao == valorBotao1)
+{
+lcd.setCursor(0,1);
+lcd.print("  ");
+lcd.setCursor(0,0);
+lcd.print(">");
+}
+ else if(botao == valorBotao2)
+{
+ lcd.setCursor(0,0);
+ lcd.print("  ");
+ lcd.setCursor(0,1);
+ lcd.print(">");
+} */
