@@ -1,0 +1,88 @@
+#include <Arduino.h>
+
+char palavra[10] = "OLA MUNDO";
+char palavra2[10] = {'O', 'L', 'A', ' ', 'M', 'U', 'N', 'D', 'O', '\0'};
+
+String palavra3 = "HOJE EH QUINTA";
+
+void setup()
+{
+  Serial.begin(9600);
+  Serial.println();
+
+  strcpy(palavra, "senai");
+  // comparacao de palavraas
+  if (strcmp(palavra, "senai") == 0) // SE FOR IGUAL RETORNA 0 = FALSA
+  {
+    Serial.println("SAO IGUAIS");
+  }
+  if (strncmp(palavra2, "OLA", 3) == 0)
+  {
+    Serial.println("As primeiras letras da palavra eh OLA");
+  }
+  // Ver se tem a mesma palavra na frase
+  if (strstr(palavra2, "MUNDO"))
+  {
+    Serial.println("Palavra MUNDO detectada");
+  }
+  //*---------------------------------------------------------------------------
+  Serial.println(palavra3.length());         // Retorna quantas letras tem no objeto da classe string
+  Serial.println(palavra3.charAt(10));       // Vai retornar a decima letra da posicao da palavra
+  Serial.println(palavra3.substring(8, 14)); // Retorna a 8° ate a 13° posicao
+  Serial.println(palavra3.indexOf('U'));     // Retorna a posicao da primeira ocorrencia da letra procurada
+  Serial.println(palavra3.lastIndexOf('E')); // Retorna a posicao da ultima ocorrencia da letra procurada
+  if (palavra3.equals("HOJE EH QUINTA"))     // Retorna verdadeiro se forem iguai
+  {
+    Serial.println("Sao iguais");
+  }
+  if (palavra3.equalsIgnoreCase("hoje eh quinta") == 1) // Retorna o verdadeiro se forem iguais ignorando lentras maiusculas/minusculas
+  {
+    Serial.println("Sao iguais");
+  }
+  if (palavra3.startsWith("HOJE") == 1) // Retorna verdadeiro se a palavra comecar com determinado texto
+  {
+    Serial.println("Comeca com HOJE");
+  }
+  if (palavra3.endsWith("INTA") == 1) // Retorna verdadeiro se a palavra terminar com determinado texto
+  {
+    Serial.println("Terminar com INTA");
+  }
+  String valor = "123";
+  int valorNumerico = valor.toInt(); // Retorna o valor do texto no valor numerico de "123" para 123 (numero)
+  Serial.println();
+
+  String valor2 = "10.5";
+  float valorNumerico2 = valor2.toFloat();
+
+
+  //* Exemplo: Transforme o numero do texto em valor numerico tipo inteiro
+  String mensagem = "Valor = 50";
+  int tamanho = mensagem.length();//Medir o tamanho do texto
+  String extracao = mensagem.substring(8, tamanho);//Extrair o numero iniciando em uma posicao conhecida até o fim do texto 
+
+  int numero = extracao.toInt();// Transforme o conteudo estraido em um numero inteiro 
+  Serial.println(numero * 2);//Utilize o nuumero sem moderação... HAHAHA
+  
+  //!CONTINUANDO
+  palavra3.toLowerCase();// Alterar todas as letras para minusculas
+  Serial.println(palavra3);
+  palavra3.toUpperCase(); //Alterar todas as letras para maiusculas 
+  Serial.println(palavra3);
+
+
+  String textoLed = "Led = ON";
+  Serial.println(textoLed);
+  textoLed.replace("ON" , "OFF"); //Substitui uma palavra no texto por outra 
+  Serial.println(textoLed);// "Led = ON";
+
+  //TODO trim(), concat()
+
+  String novaFrase = "Texto       ";
+  novaFrase.trim();//Remove os espaços do fim do texto
+
+  novaFrase.concat(" adicionado");//Adiciona um texto string
+  Serial.println(novaFrase);
+}
+void loop()
+{
+}
